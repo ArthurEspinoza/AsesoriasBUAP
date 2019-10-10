@@ -3,7 +3,7 @@
 /* DATABASE CONFIGURATION */
 define('DB_SERVER', 'localhost');
 define('DB_USERNAME', 'root');
-define('DB_PASSWORD', 'root');
+define('DB_PASSWORD', '');
 define('DB_DATABASE', 'horario');
 //define("BASE_URL", "http://localhost/PHPLoginHash/"); // Eg. http://yourwebsite.com
 

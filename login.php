@@ -35,21 +35,33 @@
             </fieldset>
         </div>
     </div> -->
+    <div class="banner">
+        <img src="img/logo.png" alt="LogoBuap">
+        <h1>Acceso a docentes</h1>
+        
+    </div>
     <div id="container" class="container">
-        <div class="row">
-            <div class="col-md">
-                <img src="img/logoBuap.png" id="buap" alt="logo">
-            </div>
-            <div class="col-md">
-                    <form action="php/ingreso.php" method="post">
-                        <label for="numtrabajo">Numero de Trabajador</label>
-                        <input type="text" name="ntrabajo" id="ntrabajo" placeholder="Ingrese su numero de trabajador" required>
-                        <label for="contra">Contraseña</label>
-                        <input type="password" name="contra" id="contra" placeholder="Ingrese Contraseña" required>
-                        <input type="submit" value="Ingresar" id="subbtn" class="btn btn-outline-primary">
-                        <input type="button" onclick="location.href='registro.php'" class="btn btn-outline-primary" value="Registrar" id="registrobtn">
-                    </form>
-            </div>
+        <div id="contenedorImg">
+            <img src="img/logoHorariosBuap.png" alt="Logo">
+        </div>
+        <h1>Facultad de Ciencias de la Computación</h1>
+        <div id="contenedorForm">
+            <form action="php/ingreso.php" method="post">
+                <div class="form-group row">
+                    <label for="numtrabajo" class="col-sm-2 col-form-label">No. Trabajador</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" name="ntrabajo" id="ntrabajo" placeholder="Ingrese su número de trabajador" required>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="contra" class="col-sm-2 col-form-label">Contraseña</label>
+                    <div class="col-sm-10">
+                        <input type="password" class="form-control" name="contra" id="contra" placeholder="Ingrese Contraseña" required>
+                    </div>
+                </div>
+                <input type="submit" value="Iniciar Sesión" id="subbtn" class="btn btn-outline-primary">
+                <input type="button" onclick="location.href='registro.php'" class="btn btn-outline-primary" value="Registrarme" id="registrobtn">
+            </form>
         </div>
     </div>
 </body>

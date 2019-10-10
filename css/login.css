@@ -1,4 +1,4 @@
-* {
+/* * {
     box-sizing: border-box;
 }
 
@@ -81,4 +81,68 @@ input[type="submit"]:hover,
 input[type="submit"]:focus {
     background: #4D648D;
     margin: 5% 0 0 0;
+} */
+
+* {
+    box-sizing: border-box
+}
+
+h1 {
+    text-align: center;
+    margin-left: 3%;
+}
+
+.banner {
+    background-color: #00b5e2;
+    width: 100%;
+}
+
+.banner>* {
+    display: inline;
+}
+
+.banner img {
+    width: 100px;
+    height: auto;
+    margin: 5px 0 5px 0;
+}
+
+.banner h1 {
+    margin-left: 30%;
+}
+
+#contenedorImg {
+    width: 250px;
+    height: auto;
+    margin-left: 39%;
+}
+
+#contenedorImg img {
+    width: 100%;
+}
+
+#contenedorForm {
+    width: 70%;
+    margin-left: 28%;
+    margin-top: 3%
+}
+
+#contenedorForm input[type="password"],
+#contenedorForm input[type="text"] {
+    width: 58%;
+}
+
+#contenedorForm input[type="button"],
+#contenedorForm input[type="submit"] {
+    background-color: #003b5c;
+    color: #ffffff;
+    padding: 5px 10% 5px 10%;
+    border: none;
+    margin: 5% 15px 0 0;
+}
+
+#contenedorForm input[type="button"]:hover,
+#contenedorForm input[type="submit"]:hover {
+    background-color: #00b5e2;
+    color: #003b5c;
 }
