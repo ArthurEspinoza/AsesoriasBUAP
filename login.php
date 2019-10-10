@@ -36,7 +36,7 @@
         </div>
     </div> -->
     <div class="banner">
-        <img src="img/logo.png" alt="LogoBuap">
+        <img src="img/escudo_negativo.png" alt="LogoBuap">
         <h1>Acceso a docentes</h1>
         
     </div>
