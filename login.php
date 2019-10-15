@@ -38,7 +38,6 @@
     <div class="banner">
         <img src="img/escudo_negativo.png" alt="LogoBuap">
         <h1>Acceso a docentes</h1>
-        
     </div>
     <div id="container" class="container">
         <div id="contenedorImg">

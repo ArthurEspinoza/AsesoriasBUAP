@@ -12,37 +12,59 @@
 </head>
 
 <body>
-    <div id="imgHead">
-        <img src="img/logoBuap.png" alt="LOGO">
+    <div class="banner">
+        <img src="img/escudo_negativo.png" alt="LogoBuap">
+        <h1>Registro de docentes</h1>
     </div>
-    <fieldset id="formulario">
-        <legend>Registrar Información</legend>
-        <div>
-            <form action="php/registrar.php" method="post" class="form-group">
-                <div>
-                <label for="fnombre">Nombre Completo</label>
-                <input type="text" name="nombre" id="nombre" placeholder="Ingrese su nombre" required>
+    <div class="container">
+        <div id="contenedorForm">
+            <form action="php/registrar.php" method="post">
+                <div class="form-group row">
+                    <label for="nombre" class="col-sm-2 col-form-label">Nombre*</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" name="nombre" id="nombre" placeholder="Ingrese su número de trabajador" required>
+                    </div>
                 </div>
-                <div>
-                <label for="femail">Correo Electrónico</label>
-                <input type="email" name="email" id="email" placeholder="Ingrese un correo@valido" required>
+                <div class="form-group row">
+                    <label for="email" class="col-sm-2 col-form-label">Correo Electrónico*</label>
+                    <div class="col-sm-10">
+                        <input type="email" class="form-control" name="correo" id="correo" placeholder="Ingrese su correo electrónico" required>
+                    </div>
                 </div>
-                <div>
-                <label for="fnotrabajo">No. Trabajador</label>
-                <input type="text" name="notrabajo" id="notrabajo" placeholder="Ingrese su número de trabajador" required>
+                <div class="form-group row">
+                    <label for="ntrabajador" class="col-sm-2 col-form-label">No. Trabajador*</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" name="ntrabajador" id="ntrabajador" placeholder="Ingrese su No. Trabajador" required>
+                    </div>
                 </div>
-                <div>
-                <label for="fpaswd">Contraseña</label>
-                <input type="password" name="paswd" id="paswd" placeholder="Ingrese una nueva contraseña" required>
+                <div class="form-group row">
+                    <label for="contra" class="col-sm-2 col-form-label">Contraseña*</label>
+                    <div class="col-sm-10">
+                        <input type="password" class="form-control" name="contra" id="contra" placeholder="Ingrese una contraseña" required>
+                    </div>
                 </div>
-                <div>
-                <label for="fcubo">Cubículo</label>
-                <input type="text" name="cubo" id="cubo" placeholder="Ingrese su cubículo" required>
-                </div>    
-                <input type="submit" class="btn btn-outline-primary" value="Guardar Datos" id="subbtn">
+                <div class="form-group row">
+                    <label for="ccontrasena" class="col-sm-2 col-form-label">Confirmar Contraseña*</label>
+                    <div class="col-sm-10">
+                        <input type="password" class="form-control" name="ccontra" id="ccontra" placeholder="Vuelva a ingresar la contraseña" required>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="cubo" class="col-sm-2 col-form-label">Cubículo</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" name="cubo" id="cubo" placeholder="Ingrese su cubículo">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="edificio" class="col-sm-2 col-form-label">Edificio</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" name="edificio" id="edificio" placeholder="Ingrese el edificio correspondiente">
+                    </div>
+                </div>
+                <input type="submit" value="Crear Cuenta" id="regbtn" class="btn btn-outline-primary">
             </form>
         </div>
-    </fieldset>
+    </div>
 </body>
 
 </html>
