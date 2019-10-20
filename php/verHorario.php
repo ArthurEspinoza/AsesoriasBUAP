@@ -7,7 +7,7 @@ $idProfe = $_GET['profe'];
 //echo $idProf;
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta http-equiv=”Content-Type” content=”text/html; charset=UTF-8″ />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,8 +18,7 @@ $idProfe = $_GET['profe'];
     <title>Horario Profesor</title>
 </head>
 <body>
-    <section>
-        <?php
+    <?php
             $mysqli = new mysqli('localhost', 'root', '', 'horario');
 
             if ($mysqli->connect_error) {
@@ -31,7 +30,16 @@ $idProfe = $_GET['profe'];
                 die('Connect Error (' . mysqli_connect_errno() . ') '
                         . mysqli_connect_error());
             }
-            $acentos = $mysqli->query("set names 'utf-8'");
+            $acentos = $mysqli->query("SET NAMES 'utf-8'");
+            $datosq = $mysqli->query("SELECT * FROM profesor WHERE noTrabajador='$idProfe'");
+            $resultado = $datosq->fetch_assoc();
+    ?>
+    <div class="banner">
+        <img src="../img/escudo_negativo.png" alt="LogoBuap">
+        <h1>Profesor: <?php echo $resultado['nombre']?> </h1>
+    </div>
+    <section>
+        <?php
             $busqueda1=$mysqli->query("SELECT * from lunes where noTrabajador='$idProfe'");
             $busqueda2=$mysqli->query("SELECT * from martes where noTrabajador='$idProfe'");
             $busqueda3=$mysqli->query("SELECT * from miercoles where noTrabajador='$idProfe'");
@@ -160,6 +168,7 @@ $idProfe = $_GET['profe'];
     ?>
     </table>
     <a href="../busqueda.php" id="liga" class="stretch-link text-primary">Volver al buscador</a>
+    <a href="../agendarAsesoria.php" id="asesoria" class="stretch-link text-primary"></a>
     </section>
 </body>
 </html>

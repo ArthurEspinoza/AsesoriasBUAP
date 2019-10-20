@@ -30,10 +30,10 @@
      <table class="table table-sm">
         <thead> 
         <tr>
-         <th>Numero de Trabajador</th>
+         <th>No. Trabajador</th>
          <th>Nombre</th>
          <th>Email</th>
-         <th>Cubiculo</th>
+         <th>Cubículo</th>
          <th></th>
          </tr>
          </thead>

@@ -6,6 +6,26 @@ body {
     background-color: #FBFBFB;
 }
 
+.banner {
+    background-color: #003b5c;
+    width: 100%;
+}
+
+.banner>* {
+    display: inline;
+}
+
+.banner img {
+    width: 100px;
+    height: auto;
+    margin: 5px 0 5px 0;
+}
+
+.banner h1 {
+    color: #ffffff;
+    margin-left: 23%;
+}
+
 
 /* Add a black background color to the top navigation */
 

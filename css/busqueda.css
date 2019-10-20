@@ -7,22 +7,45 @@ body {
     color: #283655;
 }
 
-#header {
-    width: 50%;
-    margin: 0 25% 0 25%;
+.banner {
+    background-color: #003b5c;
+    width: 100%;
 }
 
-#header h2 {
-    text-align: center;
-    text-transform: uppercase;
+.banner>* {
+    display: inline;
+}
+
+.banner img {
+    width: 100px;
+    height: auto;
+    margin: 5px 0 5px 0;
+}
+
+.banner h1 {
+    color: #ffffff;
+    margin-left: 30%;
+}
+
+.banner a {
+    margin-left: 29%;
+}
+
+.banner a img {
+    width: 100px;
+    height: auto;
+}
+
+.banner a img:visited {
+    border: none;
 }
 
 .search-container {
     width: 70%;
-    margin: 0 15% 0 15%;
+    margin: 2% 15% 0 15%;
 }
 
-.search-container input[type=text] {
+.search-container input[type="text"] {
     width: 70%;
     margin: 0 0 0 15%;
 }

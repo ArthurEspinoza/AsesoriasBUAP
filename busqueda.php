@@ -13,18 +13,17 @@
 </head>
 
 <body>
-    <div id="header">
-        <h2>Ingresa el Nombre del Profesor a Buscar</h2>
+    <div class="banner">
+        <img src="img/escudo_negativo.png" alt="LogoBuap">
+        <h1>Busca a tu docente</h1>
+        <a href="login.php">
+            <img src="img/accdocente.png" alt="docente.png">
+        </a>
     </div>
     <div class="search-container">
-        <input type="text" name="busqueda" id="busqueda" placeholder="Escribe el nombre completo en Mayusculas">
+        <input type="text" name="busqueda" id="busqueda" placeholder="Escribe el nombre del docente">
     </div>
-    <section id="datos"><!--Aqui se va a mostrar el resultado--></section>
-    <section id="liga">
-        Si eres profesor, para acceder a tu cuenta da clic 
-        <a href="login.php" class="stretch-link text-primary" >aquí</a>
-    </section>
-    
+    <section id="datos"><!--Aqui se va a mostrar el resultado--></section>    
     <script src="js/jquery.min.js"></script>
     <script src="js/main.js"></script>
 </body>
