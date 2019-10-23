@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/registro.css">
+    <script src="js/validar.js"></script>
     <title>Registro</title>
 </head>
 
@@ -18,35 +19,35 @@
     </div>
     <div class="container">
         <div id="contenedorForm">
-            <form action="php/registrar.php" method="post">
+            <form action="php/registrar.php" method="post" onsubmit="return validar()">
                 <div class="form-group row">
                     <label for="nombre" class="col-sm-2 col-form-label">Nombre*</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" name="nombre" id="nombre" placeholder="Ingrese su número de trabajador" required>
+                        <input type="text" class="form-control" name="nombre" id="nombre" placeholder="Ingrese su número de trabajador">
                     </div>
                 </div>
                 <div class="form-group row">
                     <label for="email" class="col-sm-2 col-form-label">Correo Electrónico*</label>
                     <div class="col-sm-10">
-                        <input type="email" class="form-control" name="correo" id="correo" placeholder="Ingrese su correo electrónico" required>
+                        <input type="text" class="form-control" name="correo" id="correo" placeholder="Ingrese su correo electrónico" >
                     </div>
                 </div>
                 <div class="form-group row">
                     <label for="ntrabajador" class="col-sm-2 col-form-label">No. Trabajador*</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" name="ntrabajador" id="ntrabajador" placeholder="Ingrese su No. Trabajador" required>
+                        <input type="text" class="form-control" name="ntrabajador" id="ntrabajador" placeholder="Ingrese su No. Trabajador" >
                     </div>
                 </div>
                 <div class="form-group row">
                     <label for="contra" class="col-sm-2 col-form-label">Contraseña*</label>
                     <div class="col-sm-10">
-                        <input type="password" class="form-control" name="contra" id="contra" placeholder="Ingrese una contraseña" required>
+                        <input type="password" class="form-control" name="contra" id="contra" placeholder="Ingrese una contraseña">
                     </div>
                 </div>
                 <div class="form-group row">
                     <label for="ccontrasena" class="col-sm-2 col-form-label">Confirmar Contraseña*</label>
                     <div class="col-sm-10">
-                        <input type="password" class="form-control" name="ccontra" id="ccontra" placeholder="Vuelva a ingresar la contraseña" required>
+                        <input type="password" class="form-control" name="ccontra" id="ccontra" placeholder="Vuelva a ingresar la contraseña" >
                     </div>
                 </div>
                 <div class="form-group row">
