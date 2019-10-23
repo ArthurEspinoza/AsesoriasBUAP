@@ -4,7 +4,7 @@
 define('DB_SERVER', 'localhost');
 define('DB_USERNAME', 'root');
 define('DB_PASSWORD', '');
-define('DB_DATABASE', 'horario');
+define('DB_DATABASE', 'asesoria');
 //define("BASE_URL", "http://localhost/PHPLoginHash/"); // Eg. http://yourwebsite.com
 
 

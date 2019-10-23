@@ -42,7 +42,7 @@ $idProfe = $_SESSION['noTrabajador']
     </div>
     <div>
     <?php
-    $mysqli = new mysqli("localhost", "root", "", "horario");
+    $mysqli = new mysqli("localhost", "root", "", "asesoria");
 
     if ($mysqli->connect_error) {
         die('Connect Error (' . $mysqli->connect_errno . ') '
