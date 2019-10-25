@@ -23,31 +23,31 @@
                 <div class="form-group row">
                     <label for="nombre" class="col-sm-2 col-form-label">Nombre*</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" name="nombre" id="nombre" placeholder="Ingrese su número de trabajador">
+                        <input type="text" onfocus='cambiarColor("nombre")' class="form-control" name="nombre" id="nombre" placeholder="Ingrese su número de trabajador">
                     </div>
                 </div>
                 <div class="form-group row">
                     <label for="email" class="col-sm-2 col-form-label">Correo Electrónico*</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" name="correo" id="correo" placeholder="Ingrese su correo electrónico" >
+                        <input type="text" onfocus='cambiarColor("correo")' class="form-control" name="correo" id="correo" placeholder="Ingrese su correo electrónico" >
                     </div>
                 </div>
                 <div class="form-group row">
                     <label for="ntrabajador" class="col-sm-2 col-form-label">No. Trabajador*</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" name="ntrabajador" id="ntrabajador" placeholder="Ingrese su No. Trabajador" >
+                        <input type="text" onfocus='cambiarColor("ntrabajador")' class="form-control" name="ntrabajador" id="ntrabajador" placeholder="Ingrese su No. Trabajador" >
                     </div>
                 </div>
                 <div class="form-group row">
                     <label for="contra" class="col-sm-2 col-form-label">Contraseña*</label>
                     <div class="col-sm-10">
-                        <input type="password" class="form-control" name="contra" id="contra" placeholder="Ingrese una contraseña">
+                        <input type="password" onfocus='cambiarColor("contra")' class="form-control" name="contra" id="contra" placeholder="Ingrese una contraseña">
                     </div>
                 </div>
                 <div class="form-group row">
                     <label for="ccontrasena" class="col-sm-2 col-form-label">Confirmar Contraseña*</label>
                     <div class="col-sm-10">
-                        <input type="password" class="form-control" name="ccontra" id="ccontra" placeholder="Vuelva a ingresar la contraseña" >
+                        <input type="password" onfocus='cambiarColor("ccontra")' class="form-control" name="ccontra" id="ccontra" placeholder="Vuelva a ingresar la contraseña" >
                     </div>
                 </div>
                 <div class="form-group row">
