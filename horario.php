@@ -2,7 +2,7 @@
 header("Content-type:text/html; charset=utf-8");
 session_start();
 $nombreUsuario = $_SESSION['nombre'];
-$idProfe = $_SESSION['noTrabajador']
+$idProfe = $_SESSION['noTrabajador'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -41,7 +41,7 @@ $idProfe = $_SESSION['noTrabajador']
                     <a href="mostrarBitacora.php">Ver Bitácoras</a>
                 </li>
                 <li>
-                    <a href="#">Bienvenido <?php echo $nombreUsuario?></a>
+                    <a href="editarProfe.php">Bienvenido <?php echo $nombreUsuario?></a>
                 </li>
                 <li>
                     <a href="php/destroy.php" id="cerrarS">Cerrar Sesión</a>
