@@ -15,7 +15,7 @@ if ($datosProfe->rowCount() > 0) {
 }
 //var_dump($dP);
 function update(){
-    $noTrabajador = $_POST['nT'];
+    $noTrabajador = $_POST['ntrabajador'];
     $nombre = $_POST['nombre'];
     $contra = $_POST['contra'];
     $correo = $_POST['correo'];
@@ -43,23 +43,23 @@ function update(){
     </div>
     <div class="container">
         <div id="contenedorForm">
-            <form action="php/registrar.php" method="post" onsubmit="return validar()">
+            <form action="php/editarInfo.php" method="post" onsubmit="return validar()">
                 <div class="form-group row">
                     <label for="nombre" class="col-sm-2 col-form-label">Nombre*</label>
                     <div class="col-sm-10">
-                        <input type="text" onfocus='cambiarColor("nombre")' class="form-control" name="nombre" id="nombre" placeholder="<?php echo $dP['nombre']?>">
+                        <input type="text" onfocus='cambiarColor("nombre")' class="form-control" name="nombre" id="nombre" value="<?php echo $dP['nombre']?>">
                     </div>
                 </div>
                 <div class="form-group row">
                     <label for="email" class="col-sm-2 col-form-label">Correo Electrónico*</label>
                     <div class="col-sm-10">
-                        <input type="text" onfocus='cambiarColor("correo")' class="form-control" name="correo" id="correo" placeholder="<?php echo $dP['email']?>" >
+                        <input type="text" onfocus='cambiarColor("correo")' class="form-control" name="correo" id="correo" value="<?php echo $dP['email']?>" >
                     </div>
                 </div>
                 <div class="form-group row">
                     <label for="ntrabajador" class="col-sm-2 col-form-label">No. Trabajador*</label>
                     <div class="col-sm-10">
-                        <input type="text" onfocus='cambiarColor("ntrabajador")' class="form-control" name="ntrabajador" id="ntrabajador" placeholder="<?php echo $dP['noTrabajador']?>" >
+                        <input type="text" onfocus='cambiarColor("ntrabajador")' class="form-control" name="ntrabajador" id="ntrabajador" value="<?php echo $dP['noTrabajador']?>" >
                     </div>
                 </div>
                 <div class="form-group row">
@@ -77,13 +77,13 @@ function update(){
                 <div class="form-group row">
                     <label for="cubo" class="col-sm-2 col-form-label">Cubículo</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" name="cubo" id="cubo" placeholder="<?php echo $dP['cubiculo']?>">
+                        <input type="text" class="form-control" name="cubo" id="cubo" value="<?php echo $dP['cubiculo']?>">
                     </div>
                 </div>
                 <div class="form-group row">
                     <label for="edificio" class="col-sm-2 col-form-label">Edificio</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" name="edificio" id="edificio" placeholder="<?php echo $dP['edificio']?>">
+                        <input type="text" class="form-control" name="edificio" id="edificio" value="<?php echo $dP['edificio']?>">
                     </div>
                 </div>
                 <input type="submit" value="Crear Cuenta" id="regbtn" class="btn btn-outline-primary">
