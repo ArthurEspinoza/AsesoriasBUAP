@@ -11,7 +11,7 @@ $cubo = $_POST['cubo'];
 $edificio = $_POST['edificio'];
 
 $update = $conn->prepare('UPDATE profesor SET nombre=:nombre, noTrabajador=:nT, email=:correo, contra=:contra, 
-                                              cubo=:cubo, edificio=:edificio where noTrabajador=:Nt');
+                                              cubiculo=:cubo, edificio=:edificio where noTrabajador=:Nt');
 $update->bindParam(':nombre',$nombre,PDO::PARAM_STR);
 $update->bindParam(':nT',$noTrabajador,PDO::PARAM_INT);
 $update->bindParam(':correo',$correo,PDO::PARAM_STR);
@@ -21,8 +21,12 @@ $update->bindParam(':edificio',$edificio,PDO::PARAM_STR);
 $update->bindParam(':Nt',$id,PDO::PARAM_INT);
 
 if ($update->execute()) {
-    echo "Se actualizo correctamente";
+    //echo "Se actualizo correctamente";
+    echo '<script>
+            alert("Datos actualizados correctamente");
+            window.location.href="../horario.php";
+            </script>';
 }else{
-    echo "Algo malo paso...";
+    //echo "Algo malo paso...";
 }
 ?>

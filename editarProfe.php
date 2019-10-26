@@ -13,16 +13,6 @@ if ($datosProfe->rowCount() > 0) {
     $datos = $datosProfe->fetch(PDO::FETCH_ASSOC);
     $dP = $datos;
 }
-//var_dump($dP);
-function update(){
-    $noTrabajador = $_POST['ntrabajador'];
-    $nombre = $_POST['nombre'];
-    $contra = $_POST['contra'];
-    $correo = $_POST['correo'];
-    $cubo = $_POST['cubo'];
-    $edificio = $_POST['edificio'];
-    echo $noTrabajador + $nombre + $contra + $correo + $cubo + $edificio;
-}
 ?>
 <!DOCTYPE html>
 <html lang="es">
