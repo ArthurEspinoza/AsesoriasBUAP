@@ -17,25 +17,12 @@ $idProfe = $_SESSION['noTrabajador'];
 </head>
 
 <body>
-    <script>
-        function myFunction() {
-            var x = document.getElementById("myTopnav");
-            if (x.className === "topnav") {
-                x.className += " responsive";
-            } else {
-                x.className = "topnav";
-            }
-        }
-    </script>
     <header>
         <img src="img/escudo_negativo.png" alt="LogoBuap">
         <nav>
             <ul>
                 <li>
                     <a href="#horario">Mi Horario</a>
-                </li>
-                <li>
-                    <a href="bitacora.php">Añadir Bitácora</a>
                 </li>
                 <li>
                     <a href="mostrarBitacora.php">Ver Bitácoras</a>

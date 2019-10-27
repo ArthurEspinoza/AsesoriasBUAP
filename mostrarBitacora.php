@@ -1,7 +1,17 @@
 <?php
+header("Content-type:text/html; charset=utf-8");
 session_start();
+include('php/config.php');
+$conn = getDB();
 $nombreUsuario = $_SESSION['nombre'];
 $idProfe = $_SESSION['noTrabajador'];
+$cita = $conn->prepare('SELECT * from Cita WHERE noTrabajador=:nT');
+$cita->bindParam(':nT', $idProfe, PDO::PARAM_INT);
+$datosCita;
+$datosAsesoria;
+if ($cita->execute()) {
+    $datosCita = $cita->fetchAll();
+
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -16,65 +26,61 @@ $idProfe = $_SESSION['noTrabajador'];
 </head>
 
 <body>
-    <script>
-        function myFunction() {
-            var x = document.getElementById("myTopnav");
-            if (x.className === "topnav") {
-                x.className += " responsive";
-            } else {
-                x.className = "topnav";
-            }
-        }
-    </script>
-    <div class="topnav" id="myTopnav">
-        <div id="logo">
-            <img src="img/logo.png" alt="logo">
-        </div>
-        <a href="horario.php" class="active">Mis Horarios</a>
-        <a href="bitacora.php">Añadir Bitácora</a>
-        <a href="#mostrarBitacora.php">Ver Bitácoras</a>
-        <a href="php/destroy.php"class="active">Cerrar Sesión</a>
-        <a href="#">Bienvenido <?php echo $nombreUsuario?></a>
-        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-            <i class="fa fa-bars"></i>
-        </a>
-    </div>
+    <header>
+        <img src="img/escudo_negativo.png" alt="LogoBuap">
+        <nav>
+            <ul>
+                <li>
+                    <a href="horario.php">Mi Horario</a>
+                </li>
+                <li>
+                    <a href="mostrarBitacora.php">Ver Bitácoras</a>
+                </li>
+                <li>
+                    <a href="editarProfe.php">Bienvenido <?php echo $nombreUsuario?></a>
+                </li>
+                <li>
+                    <a href="php/destroy.php" id="cerrarS">Cerrar Sesión</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
     <div>
     <table id ="tablaB" border="1px" align="center" class="table table-sm">
         <thead>
             <tr>
                 
                 <th>Fecha</th>
+                <th>Hora</th>
                 <th>Materia</th>
                 <th>Alumnos</th>
                 <th>Descripción</th>
             </tr>
         </thead>
     <?php
-    $mysqli = new mysqli('localhost', 'root', '', 'asesoria');
-
-    if ($mysqli->connect_error) {
-        die('Connect Error (' . $mysqli->connect_errno . ') '
-                . $mysqli->connect_error);
-    }
-
-    if (mysqli_connect_error()) {
-        die('Connect Error (' . mysqli_connect_errno() . ') '
-                . mysqli_connect_error());
-    }
     
-    $acentos = $mysqli->query("set names 'utf-8'");
-    $busqueda1=$mysqli->query("SELECT * from bitacora where noTrabajador='$idProfe' ORDER BY fecha DESC");
-    while($datos1=$busqueda1->fetch_array()){
+    foreach($datosCita as $row){
+        $asesoria = $conn->prepare('SELECT * FROM Asesoria WHERE idCita=:cita');
+        $asesoria->bindParam(':cita', $row['idCita'], PDO::PARAM_INT);
+        if ($asesoria->execute()) {
+            $datosAsesoria = $asesoria->fetch(PDO::FETCH_ASSOC);
+        
+        
     ?>
         <tr>
-            <!-- <th><?php echo $datos1["idbitacora"]?></th> -->
-            <td><?php echo $datos1["fecha"]?></td>
-            <td><?php echo utf8_encode($datos1["materia"])?></td>
-            <td><?php echo utf8_encode($datos1["alumnos"])?></td>
-            <td><?php echo utf8_encode($datos1["descripcion"])?></td>
+            <th><?php echo $row["fecha"]?></th>
+            <td><?php echo $row["hora"]?></td>
+            <td><?php echo $datosAsesoria["materia"]?></td>
+            <td><?php echo $datosAsesoria["nombreAlumno"]?></td>
+            <td><?php echo $datosAsesoria["descripcion"]?></td>
         </tr>
     <?php
+            }else{
+                echo "Hubo un error al obtener datos de Asesoria";
+            }
+        }
+    }else{
+        echo "No hay cita para ese profe";
     }
     ?>
     </table>

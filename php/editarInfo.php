@@ -22,6 +22,7 @@ $update->bindParam(':Nt',$id,PDO::PARAM_INT);
 
 if ($update->execute()) {
     //echo "Se actualizo correctamente";
+    $_SESSION['nombre'] = $nombre;
     echo '<script>
             alert("Datos actualizados correctamente");
             window.location.href="../horario.php";

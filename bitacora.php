@@ -29,19 +29,28 @@ $idProfe = $_SESSION['noTrabajador']
             }
         }
     </script>
-    <div class="topnav" id="myTopnav">
-        <div id="logo">
-            <img src="img/logo.png" alt="logo">
-        </div>
-        <a href="horario.php">Mis Horarios</a>
-        <a href="#bitacora.php" class="active">Añadir Bitácora</a>
-        <a href="mostrarBitacora.php">Ver Bitácoras</a>
-        <a href="php/destroy.php"class="active">Cerrar Sesión</a>
-        <a href="#">Bienvenido <?php echo $nombreUsuario?></a>
-        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-            <i class="fa fa-bars"></i>
-        </a>
-    </div>
+    <header>
+        <img src="img/escudo_negativo.png" alt="LogoBuap">
+        <nav>
+            <ul>
+                <li>
+                    <a href="#horario">Mi Horario</a>
+                </li>
+                <li>
+                    <a href="bitacora.php">Añadir Bitácora</a>
+                </li>
+                <li>
+                    <a href="mostrarBitacora.php">Ver Bitácoras</a>
+                </li>
+                <li>
+                    <a href="editarProfe.php">Bienvenido <?php echo $nombreUsuario?></a>
+                </li>
+                <li>
+                    <a href="php/destroy.php" id="cerrarS">Cerrar Sesión</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
 
     <div id="instrucciones">
         Complete el formulario con la información necesaria, al finalizar dar clic en el botón "Guardar Bitácora".
