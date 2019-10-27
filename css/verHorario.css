@@ -1,0 +1,51 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #FBFBFB;
+}
+
+.banner {
+    background-color: #003b5c;
+    width: 100%;
+}
+
+.banner>* {
+    display: inline;
+}
+
+.banner img {
+    width: 100px;
+    height: auto;
+    margin: 5px 0 5px 0;
+}
+
+.banner h1 {
+    color: #ffffff;
+    margin-left: 23%;
+}
+
+#tablaH {
+    width: 70%;
+    margin: 10px 15% 10px 15.7%;
+}
+
+#btnH {
+    margin: 5px 43% 5px 43%;
+}
+
+#btnH:hover {
+    background-color: #283655;
+    color: whitesmoke;
+}
+
+#btnH a:hover {
+    background-color: #283655;
+    color: whitesmoke;
+    text-decoration: none;
+}
+
+#liga {
+    margin: 0 43% 0 45%;
+}
