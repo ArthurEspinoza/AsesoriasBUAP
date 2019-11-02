@@ -181,7 +181,7 @@ if ($horarioViernes->execute()) {
     ?>
     </table>
     <a href="../busqueda.php" id="liga" class="stretch-link text-primary">Volver al buscador</a>
-    <a href="../agendarAsesoria.php" id="asesoria" class="stretch-link text-primary">Agendar Asesoria</a>
+    <a href="../agendarCita.php?profe=<?php echo urlencode($idProfe)?>" id="asesoria" class="stretch-link text-primary">Agendar Asesoria</a>
     </section>
 </body>
 </html>
