@@ -14,17 +14,23 @@ $idProfe = $_GET['profe'];
     <title>AgendarCita</title>
 </head>
 <body>
-    <div id="formDiv">
-        <form>            
-            <div class="form-group">
-                <label for="fecha">Selecciona la fecha</label>
-                <input type="date" name="fecha" id="fecha" class="form-control">
-            </div>
-            <input type="button" onclick="verificarFecha(<?php echo $idProfe?>)" value="Verificar">
-        </form>
+    <div class="banner">
+        <img src="img/escudo_negativo.png" alt="LogoBuap">
+        <h1>Seleccion la fecha y hora de la asesoría</h1>
     </div>
-    <div id="resultDiv">
-
+    <div class="contenedor">
+        <div id="formDiv">
+            <form>            
+                <div class="form-group row">
+                    <label for="fecha" class="col-sm-3 col-form-label">Selecciona la fecha</label>
+                    <div class="col-sm-6">
+                        <input type="date" name="fecha" id="fecha" class="form-control">
+                    </div>
+                </div>
+                <input type="button" onclick="verificarFecha(<?php echo $idProfe?>)" value="Verificar">
+            </form>
+        </div>
+        <div id="resultDiv"></div>
     </div>
 </body>
 </html>
