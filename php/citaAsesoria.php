@@ -8,73 +8,73 @@ function imprimirHoras($i, $idP){
         case 7:
             $strTabla = $strTabla.'<tr>
                             <td>07:00 - 08:00</td>
-                            <td><a href="../agendarAsesoria.php?'.urlencode($idP).'">Agendar a esta hora</a></td>
+                            <td><a href="./agendarAsesoria.php?profe='.urlencode($idP).'">Agendar a esta hora</a></td>
                         </tr>';
             break;
         case 8:
             $strTabla = $strTabla.'<tr>
                             <td>08:00 - 09:00</td>
-                            <td><a href="../agendarAsesoria.php?'.urlencode($idP).'">Agendar a esta hora</a></td>
+                            <td><a href="./agendarAsesoria.php?profe='.urlencode($idP).'">Agendar a esta hora</a></td>
                         </tr>';
             break;
         case 9:
             $strTabla = $strTabla.'<tr>
                             <td>09:00 - 10:00</td>
-                            <td><a href="../agendarAsesoria.php?'.urlencode($idP).'">Agendar a esta hora</a></td>
+                            <td><a href="./agendarAsesoria.php?profe='.urlencode($idP).'">Agendar a esta hora</a></td>
                         </tr>';
             break;
         case 10:
             $strTabla = $strTabla.'<tr>
                             <td>10:00 - 11:00</td>
-                            <td><a href="../agendarAsesoria.php?'.urlencode($idP).'">Agendar a esta hora</a></td>
+                            <td><a href="./agendarAsesoria.php?profe='.urlencode($idP).'">Agendar a esta hora</a></td>
                         </tr>';
             break;
         case 11:
             $strTabla = $strTabla.'<tr>
                             <td>11:00 - 12:00</td>
-                            <td><a href="../agendarAsesoria.php?'.urlencode($idP).'">Agendar a esta hora</a></td>
+                            <td><a href="./agendarAsesoria.php?profe='.urlencode($idP).'">Agendar a esta hora</a></td>
                         </tr>';
             break;
         case 12:
             $strTabla = $strTabla.'<tr>
                             <td>12:00 - 13:00</td>
-                            <td><a href="../agendarAsesoria.php?'.urlencode($idP).'">Agendar a esta hora</a></td>
+                            <td><a href="./agendarAsesoria.php?profe='.urlencode($idP).'">Agendar a esta hora</a></td>
                         </tr>';
             break;
         case 13:
             $strTabla = $strTabla.'<tr>
                             <td>13:00 - 14:00</td>
-                            <td><a href="../agendarAsesoria.php?'.urlencode($idP).'">Agendar a esta hora</a></td>
+                            <td><a href="./agendarAsesoria.php?profe='.urlencode($idP).'">Agendar a esta hora</a></td>
                         </tr>';
             break;
         case 14:
             $strTabla = $strTabla.'<tr>
                             <td>14:00 - 15:00</td>
-                            <td><a href="../agendarAsesoria.php?'.urlencode($idP).'">Agendar a esta hora</a></td>
+                            <td><a href="./agendarAsesoria.php?profe='.urlencode($idP).'">Agendar a esta hora</a></td>
                         </tr>';
             break;
         case 15:
             $strTabla = $strTabla.'<tr>
                             <td>15:00 - 16:00</td>
-                            <td><a href="../agendarAsesoria.php?'.urlencode($idP).'">Agendar a esta hora</a></td>
+                            <td><a href="./agendarAsesoria.php?profe='.urlencode($idP).'">Agendar a esta hora</a></td>
                         </tr>';
             break;
         case 16:
             $strTabla = $strTabla.'<tr>
                             <td>16:00 - 17:00</td>
-                            <td><a href="../agendarAsesoria.php?'.urlencode($idP).'">Agendar a esta hora</a></td>
+                            <td><a href="./agendarAsesoria.php?profe='.urlencode($idP).'">Agendar a esta hora</a></td>
                         </tr>';
             break;
         case 17:
             $strTabla = $strTabla.'<tr>
                             <td>17:00 - 18:00</td>
-                            <td><a href="../agendarAsesoria.php?'.urlencode($idP).'">Agendar a esta hora</a></td>
+                            <td><a href="./agendarAsesoria.php?profe='.urlencode($idP).'">Agendar a esta hora</a></td>
                         </tr>';
             break;
         case 18:
             $strTabla = $strTabla.'<tr>
                             <td>18:00 - 19:00</td>
-                            <td><a href="../agendarAsesoria.php?'.urlencode($idP).'">Agendar a esta hora</a></td>
+                            <td><a href="./agendarAsesoria.php?profe='.urlencode($idP).'">Agendar a esta hora</a></td>
                         </tr>';
             break;
         default:
