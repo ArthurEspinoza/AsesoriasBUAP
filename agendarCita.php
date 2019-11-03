@@ -16,7 +16,7 @@ $idProfe = $_GET['profe'];
 <body>
     <div class="banner">
         <img src="img/escudo_negativo.png" alt="LogoBuap">
-        <h1>Seleccion la fecha y hora de la asesoría</h1>
+        <h1>Selecciona la fecha y hora de la asesoría</h1>
     </div>
     <div class="contenedor">
         <div id="formDiv">

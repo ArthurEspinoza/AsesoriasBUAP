@@ -8,73 +8,73 @@ function imprimirHoras($i, $idP){
         case 7:
             $strTabla = $strTabla.'<tr>
                             <td>07:00 - 08:00</td>
-                            <td><a href="../agendarAsesoria.php?'.$idP.'">Seleccionar Hora</a></td>
+                            <td><a href="../agendarAsesoria.php?'.urlencode($idP).'">Agendar a esta hora</a></td>
                         </tr>';
             break;
         case 8:
             $strTabla = $strTabla.'<tr>
                             <td>08:00 - 09:00</td>
-                            <td><a href="../agendarAsesoria.php?'.$idP.'">Seleccionar Hora</a></td>
+                            <td><a href="../agendarAsesoria.php?'.urlencode($idP).'">Agendar a esta hora</a></td>
                         </tr>';
             break;
         case 9:
             $strTabla = $strTabla.'<tr>
                             <td>09:00 - 10:00</td>
-                            <td><a href="../agendarAsesoria.php?'.$idP.'">Seleccionar Hora</a></td>
+                            <td><a href="../agendarAsesoria.php?'.urlencode($idP).'">Agendar a esta hora</a></td>
                         </tr>';
             break;
         case 10:
             $strTabla = $strTabla.'<tr>
                             <td>10:00 - 11:00</td>
-                            <td><a href="../agendarAsesoria.php?'.$idP.'">Seleccionar Hora</a></td>
+                            <td><a href="../agendarAsesoria.php?'.urlencode($idP).'">Agendar a esta hora</a></td>
                         </tr>';
             break;
         case 11:
             $strTabla = $strTabla.'<tr>
                             <td>11:00 - 12:00</td>
-                            <td><a href="../agendarAsesoria.php?'.$idP.'">Seleccionar Hora</a></td>
+                            <td><a href="../agendarAsesoria.php?'.urlencode($idP).'">Agendar a esta hora</a></td>
                         </tr>';
             break;
         case 12:
             $strTabla = $strTabla.'<tr>
                             <td>12:00 - 13:00</td>
-                            <td><a href="../agendarAsesoria.php?'.$idP.'">Seleccionar Hora</a></td>
+                            <td><a href="../agendarAsesoria.php?'.urlencode($idP).'">Agendar a esta hora</a></td>
                         </tr>';
             break;
         case 13:
             $strTabla = $strTabla.'<tr>
                             <td>13:00 - 14:00</td>
-                            <td><a href="../agendarAsesoria.php?'.$idP.'">Seleccionar Hora</a></td>
+                            <td><a href="../agendarAsesoria.php?'.urlencode($idP).'">Agendar a esta hora</a></td>
                         </tr>';
             break;
         case 14:
             $strTabla = $strTabla.'<tr>
                             <td>14:00 - 15:00</td>
-                            <td><a href="../agendarAsesoria.php?'.$idP.'">Seleccionar Hora</a></td>
+                            <td><a href="../agendarAsesoria.php?'.urlencode($idP).'">Agendar a esta hora</a></td>
                         </tr>';
             break;
         case 15:
             $strTabla = $strTabla.'<tr>
                             <td>15:00 - 16:00</td>
-                            <td><a href="../agendarAsesoria.php?'.$idP.'">Seleccionar Hora</a></td>
+                            <td><a href="../agendarAsesoria.php?'.urlencode($idP).'">Agendar a esta hora</a></td>
                         </tr>';
             break;
         case 16:
             $strTabla = $strTabla.'<tr>
                             <td>16:00 - 17:00</td>
-                            <td><a href="../agendarAsesoria.php?'.$idP.'">Seleccionar Hora</a></td>
+                            <td><a href="../agendarAsesoria.php?'.urlencode($idP).'">Agendar a esta hora</a></td>
                         </tr>';
             break;
         case 17:
             $strTabla = $strTabla.'<tr>
                             <td>17:00 - 18:00</td>
-                            <td><a href="../agendarAsesoria.php?'.$idP.'">Seleccionar Hora</a></td>
+                            <td><a href="../agendarAsesoria.php?'.urlencode($idP).'">Agendar a esta hora</a></td>
                         </tr>';
             break;
         case 18:
             $strTabla = $strTabla.'<tr>
                             <td>18:00 - 19:00</td>
-                            <td><a href="../agendarAsesoria.php?'.$idP.'">Seleccionar Hora</a></td>
+                            <td><a href="../agendarAsesoria.php?'.urlencode($idP).'">Agendar a esta hora</a></td>
                         </tr>';
             break;
         default:
@@ -90,9 +90,9 @@ $fecha = $data->fecha;
 $ase = "Asesoría";
 //Consigo el dia de la fecha recibida
 $dia = date("N", strtotime($fecha));
-$tablaHtml = '<table><thead><tr>
+$tablaHtml = '<table class="table"><thead class="thead"><tr>
                 <th>Hora</th>
-                <th>Cita</th>
+                <th></th>
               </tr></thead>
               <tbody>';
 switch ($dia) {
@@ -110,6 +110,8 @@ switch ($dia) {
                     $i += 1;
                 }
                 unset($h);
+                $tablaHtml = $tablaHtml.'</tbody></table>';
+                echo $tablaHtml;
             }else {
                 echo "El docente no da Asesorías el día Lunes";
             }
@@ -129,8 +131,10 @@ switch ($dia) {
                     $i += 1;
                 }
                 unset($h);
+                $tablaHtml = $tablaHtml.'</tbody></table>';
+                echo $tablaHtml;
             }else {
-                echo "El docente no da Asesorías el día Lunes";
+                echo "El docente no da Asesorías el día Martes";
             }
         }
         break;
@@ -147,9 +151,11 @@ switch ($dia) {
                     }
                     $i += 1;
                 }
+                $tablaHtml = $tablaHtml.'</tbody></table>';
+                echo $tablaHtml;
                 unset($h);
             }else {
-                echo "El docente no da Asesorías el día Lunes";
+                echo "El docente no da Asesorías el día Miercoles";
             }
         }
         break;
@@ -166,9 +172,11 @@ switch ($dia) {
                     }
                     $i += 1;
                 }
+                $tablaHtml = $tablaHtml.'</tbody></table>';
+                echo $tablaHtml;
                 unset($h);
             }else {
-                echo "El docente no da Asesorías el día Lunes";
+                echo "El docente no da Asesorías el día Jueves";
             }
         }
         break;
@@ -185,9 +193,11 @@ switch ($dia) {
                     }
                     $i += 1;
                 }
+                $tablaHtml = $tablaHtml.'</tbody></table>';
+                echo $tablaHtml;
                 unset($h);
             }else {
-                echo "El docente no da Asesorías el día Lunes";
+                echo "El docente no da Asesorías el día Viernes";
             }
         }
         break;
@@ -195,6 +205,4 @@ switch ($dia) {
         echo "Dia desconocido";
         break;
 }
-$tablaHtml = $tablaHtml.'</tbody></table>';
-echo $tablaHtml;
 ?>
