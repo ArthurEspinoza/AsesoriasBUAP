@@ -2,79 +2,79 @@
 header("Content-Type: application/json");
 include('config.php');
 $conn = getDB();
-function imprimirHoras($i, $idP){
+function imprimirHoras($i, $idP, $f){
     $strTabla = '';
     switch ($i) {
         case 7:
             $strTabla = $strTabla.'<tr>
                             <td>07:00 - 08:00</td>
-                            <td><a href="./agendarAsesoria.php?profe='.urlencode($idP).'&hora=siete">Agendar a esta hora</a></td>
+                            <td><a href="./agendarAsesoria.php?profe='.urlencode($idP).'&fecha='.urlencode($f).'&hora=7">Agendar a esta hora</a></td>
                         </tr>';
             break;
         case 8:
             $strTabla = $strTabla.'<tr>
                             <td>08:00 - 09:00</td>
-                            <td><a href="./agendarAsesoria.php?profe='.urlencode($idP).'&hora=ocho">Agendar a esta hora</a></td>
+                            <td><a href="./agendarAsesoria.php?profe='.urlencode($idP).'&fecha='.urlencode($f).'&hora=8">Agendar a esta hora</a></td>
                         </tr>';
             break;
         case 9:
             $strTabla = $strTabla.'<tr>
                             <td>09:00 - 10:00</td>
-                            <td><a href="./agendarAsesoria.php?profe='.urlencode($idP).'&hora=nueve">Agendar a esta hora</a></td>
+                            <td><a href="./agendarAsesoria.php?profe='.urlencode($idP).'&fecha='.urlencode($f).'&hora=9">Agendar a esta hora</a></td>
                         </tr>';
             break;
         case 10:
             $strTabla = $strTabla.'<tr>
                             <td>10:00 - 11:00</td>
-                            <td><a href="./agendarAsesoria.php?profe='.urlencode($idP).'&hora=diez">Agendar a esta hora</a></td>
+                            <td><a href="./agendarAsesoria.php?profe='.urlencode($idP).'&fecha='.urlencode($f).'&hora=10">Agendar a esta hora</a></td>
                         </tr>';
             break;
         case 11:
             $strTabla = $strTabla.'<tr>
                             <td>11:00 - 12:00</td>
-                            <td><a href="./agendarAsesoria.php?profe='.urlencode($idP).'&hora=once">Agendar a esta hora</a></td>
+                            <td><a href="./agendarAsesoria.php?profe='.urlencode($idP).'&fecha='.urlencode($f).'&hora=11">Agendar a esta hora</a></td>
                         </tr>';
             break;
         case 12:
             $strTabla = $strTabla.'<tr>
                             <td>12:00 - 13:00</td>
-                            <td><a href="./agendarAsesoria.php?profe='.urlencode($idP).'&hora=doce">Agendar a esta hora</a></td>
+                            <td><a href="./agendarAsesoria.php?profe='.urlencode($idP).'&fecha='.urlencode($f).'&hora=12">Agendar a esta hora</a></td>
                         </tr>';
             break;
         case 13:
             $strTabla = $strTabla.'<tr>
                             <td>13:00 - 14:00</td>
-                            <td><a href="./agendarAsesoria.php?profe='.urlencode($idP).'&hora=trece">Agendar a esta hora</a></td>
+                            <td><a href="./agendarAsesoria.php?profe='.urlencode($idP).'&fecha='.urlencode($f).'&hora=13">Agendar a esta hora</a></td>
                         </tr>';
             break;
         case 14:
             $strTabla = $strTabla.'<tr>
                             <td>14:00 - 15:00</td>
-                            <td><a href="./agendarAsesoria.php?profe='.urlencode($idP).'&hora=catorce">Agendar a esta hora</a></td>
+                            <td><a href="./agendarAsesoria.php?profe='.urlencode($idP).'&fecha='.urlencode($f).'&hora=14">Agendar a esta hora</a></td>
                         </tr>';
             break;
         case 15:
             $strTabla = $strTabla.'<tr>
                             <td>15:00 - 16:00</td>
-                            <td><a href="./agendarAsesoria.php?profe='.urlencode($idP).'&hora=quince">Agendar a esta hora</a></td>
+                            <td><a href="./agendarAsesoria.php?profe='.urlencode($idP).'&fecha='.urlencode($f).'&hora=15">Agendar a esta hora</a></td>
                         </tr>';
             break;
         case 16:
             $strTabla = $strTabla.'<tr>
                             <td>16:00 - 17:00</td>
-                            <td><a href="./agendarAsesoria.php?profe='.urlencode($idP).'&hora=diezseis">Agendar a esta hora</a></td>
+                            <td><a href="./agendarAsesoria.php?profe='.urlencode($idP).'&fecha='.urlencode($f).'&hora=16">Agendar a esta hora</a></td>
                         </tr>';
             break;
         case 17:
             $strTabla = $strTabla.'<tr>
                             <td>17:00 - 18:00</td>
-                            <td><a href="./agendarAsesoria.php?profe='.urlencode($idP).'&hora=diezsiete">Agendar a esta hora</a></td>
+                            <td><a href="./agendarAsesoria.php?profe='.urlencode($idP).'&fecha='.urlencode($f).'&hora=17">Agendar a esta hora</a></td>
                         </tr>';
             break;
         case 18:
             $strTabla = $strTabla.'<tr>
                             <td>18:00 - 19:00</td>
-                            <td><a href="./agendarAsesoria.php?profe='.urlencode($idP).'&hora=diezocho">Agendar a esta hora</a></td>
+                            <td><a href="./agendarAsesoria.php?profe='.urlencode($idP).'&fecha='.urlencode($f).'&hora=18">Agendar a esta hora</a></td>
                         </tr>';
             break;
         default:
@@ -105,7 +105,7 @@ switch ($dia) {
             if (in_array('Asesoría', $horas)) {
                 foreach ($horas as $h) {
                     if ($h == 'Asesoría') {
-                        $tablaHtml = $tablaHtml.imprimirHoras($i, $idProfe);
+                        $tablaHtml = $tablaHtml.imprimirHoras($i, $idProfe, $fecha);
                     }
                     $i += 1;
                 }
@@ -126,7 +126,7 @@ switch ($dia) {
             if (in_array('Asesoría', $horas)) {
                 foreach ($horas as $h) {
                     if ($h == 'Asesoría') {
-                        $tablaHtml = $tablaHtml.imprimirHoras($i, $idProfe);
+                        $tablaHtml = $tablaHtml.imprimirHoras($i, $idProfe, $fecha);
                     }
                     $i += 1;
                 }
@@ -147,7 +147,7 @@ switch ($dia) {
             if (in_array('Asesoría', $horas)) {
                 foreach ($horas as $h) {
                     if ($h == 'Asesoría') {
-                        $tablaHtml = $tablaHtml.imprimirHoras($i, $idProfe);
+                        $tablaHtml = $tablaHtml.imprimirHoras($i, $idProfe, $fecha);
                     }
                     $i += 1;
                 }
@@ -168,7 +168,7 @@ switch ($dia) {
             if (in_array('Asesoría', $horas)) {
                 foreach ($horas as $h) {
                     if ($h == 'Asesoría') {
-                        $tablaHtml = $tablaHtml.imprimirHoras($i, $idProfe);
+                        $tablaHtml = $tablaHtml.imprimirHoras($i, $idProfe, $fecha);
                     }
                     $i += 1;
                 }
@@ -189,7 +189,7 @@ switch ($dia) {
             if (in_array('Asesoría', $horas)) {
                 foreach ($horas as $h) {
                     if ($h == 'Asesoría') {
-                        $tablaHtml = $tablaHtml.imprimirHoras($i, $idProfe);
+                        $tablaHtml = $tablaHtml.imprimirHoras($i, $idProfe, $fecha);
                     }
                     $i += 1;
                 }
