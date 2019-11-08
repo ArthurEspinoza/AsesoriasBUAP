@@ -5,14 +5,20 @@ $conn = getDB();
 $idProfe = $_GET['profe'];
 $hora = $_GET['hora'];
 $fecha = $_GET['fecha'];
-//echo strlen($hora);
-/*$queryCita = $conn->prepare('INSERT INTO cita(fecha, hora, noTrabajador) VALUES(:f, :h, :nT)');
+$idCita;
+if (strlen($hora)==2) {
+    $hora = $hora.':00:00';
+}else{
+    $hora = '0'.$hora.':00:00';
+}
+$queryCita = $conn->prepare('INSERT INTO cita(fecha, hora, noTrabajador) VALUES(:f, :h, :nT)');
 $queryCita->bindParam(':f', $fecha, PDO::PARAM_STR);
 $queryCita->bindParam(':h', $hora, PDO::PARAM_STR);
 $queryCita->bindParam(':nT', $idProfe, PDO::PARAM_STR);
 if ($queryCita->execute()) {
-    echo "Se inserto la cita con exito";
-}*/
+    $idCita = $conn->lastInsertId();
+}
+//echo $idCita;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -49,7 +55,7 @@ if ($queryCita->execute()) {
                 <label for="descrip">Descripción</label>
                 <textarea name="descrip" onfocus="cambiarColor('descrip')" id="descrip" cols="10" rows="5" class="form-control" placeholder="Describe lo que quieres tratar en la asesoría"></textarea>
             </div>
-            <input type="button" onclick="verificarA(<?php echo $idProfe?>)" value="Guardar Asesoría">
+            <input type="button" onclick="verificarA(<?php echo $idProfe?>, <?php echo $idCita?>)" value="Guardar Asesoría">
         </form>
     </div>
 </body>

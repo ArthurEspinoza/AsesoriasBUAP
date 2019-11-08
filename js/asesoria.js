@@ -1,8 +1,9 @@
-function verificarA(idProfe) {
+function verificarA(idProfe, idCita) {
     var materia = document.getElementById('materia').value;
     var nombre = document.getElementById('alumno').value;
     var matricula = document.getElementById('matricula').value;
     var descrip = document.getElementById('descrip').value;
+    console.log(idProfe, idCita, materia, nombre, matricula, descrip);
     if (nombre === '' || materia === '' || matricula === '' || descrip === '') {
         alert("Los campos con un * son obligatorios");
         document.getElementById('materia').style.backgroundColor = '#FB953A';
@@ -22,12 +23,17 @@ function verificarA(idProfe) {
         xhr.onreadystatechange = function() {
             if (xhr.readyState === 4 && xhr.status === 200) {
                 // Print received data from server 
-                alert("Asesoria guardada exitosamente");
-                location.href = "busqueda.php";
+                if (this.responseText == 1) {
+                    alert("Asesoria guardada exitosamente");
+                    location.href = "busqueda.php";
+                } else {
+                    alert("Algo pasó con la consulta" + this.responseText);
+                }
             }
         };
         var data = JSON.stringify({
             "idProfe": idProfe,
+            "idCita": idCita,
             "materia": materia,
             "nombre": nombre,
             "matricula": matricula,
