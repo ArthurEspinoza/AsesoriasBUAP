@@ -2,80 +2,236 @@
 header("Content-Type: application/json");
 include('config.php');
 $conn = getDB();
-function imprimirHoras($i, $idP, $f){
+function imprimirHoras($i, $idP, $f, $db){
     $strTabla = '';
     switch ($i) {
         case 7:
-            $strTabla = $strTabla.'<tr>
+            $queryEstado = $db->prepare('SELECT * from cita where fecha=:f AND hora = "07:00:00"');
+            $queryEstado->bindParam(':f', $f, PDO::PARAM_STR);
+            if ($queryEstado->execute()) {
+                if ($queryEstado->rowCount()>0) {
+                    $strTabla = $strTabla.'<tr>
                             <td>07:00 - 08:00</td>
+                            <td class="ocupado">OCUPADO</td>
+                            <td></td>
+                        </tr>';
+                }else{
+                    $strTabla = $strTabla.'<tr>
+                            <td>07:00 - 08:00</td>
+                            <td class="libre">LIBRE</td>
                             <td><a href="./agendarAsesoria.php?profe='.urlencode($idP).'&fecha='.urlencode($f).'&hora=7">Agendar a esta hora</a></td>
                         </tr>';
+                }
+            }
             break;
         case 8:
-            $strTabla = $strTabla.'<tr>
+            $queryEstado = $db->prepare('SELECT * from cita where fecha=:f AND hora = "08:00:00"');
+            $queryEstado->bindParam(':f', $f, PDO::PARAM_STR);
+            if ($queryEstado->execute) {
+                if ($queryEstado->rowCount()>0) {
+                    $strTabla = $strTabla.'<tr>
                             <td>08:00 - 09:00</td>
+                            <td class="ocupado">OCUPADO</td>
+                            <td></td>
+                        </tr>';
+                }else{
+                    $strTabla = $strTabla.'<tr>
+                            <td>08:00 - 09:00</td>
+                            <td class="libre">LIBRE</td>
                             <td><a href="./agendarAsesoria.php?profe='.urlencode($idP).'&fecha='.urlencode($f).'&hora=8">Agendar a esta hora</a></td>
                         </tr>';
+                }
+            }
             break;
         case 9:
-            $strTabla = $strTabla.'<tr>
+            $queryEstado = $db->prepare('SELECT * from cita where fecha=:f AND hora = "09:00:00"');
+            $queryEstado->bindParam(':f', $f, PDO::PARAM_STR);
+            if ($queryEstado->execute()) {
+                if ($queryEstado->rowCount()>0) {
+                    $strTabla = $strTabla.'<tr>
                             <td>09:00 - 10:00</td>
+                            <td class="ocupado">OCUPADO</td>
+                            <td></td>
+                        </tr>';
+                }else{
+                    $strTabla = $strTabla.'<tr>
+                            <td>09:00 - 10:00</td>
+                            <td class="libre">LIBRE</td>
                             <td><a href="./agendarAsesoria.php?profe='.urlencode($idP).'&fecha='.urlencode($f).'&hora=9">Agendar a esta hora</a></td>
                         </tr>';
+                }
+            }
             break;
         case 10:
-            $strTabla = $strTabla.'<tr>
+            $queryEstado = $db->prepare('SELECT * from cita where fecha=:f AND hora = "10:00:00"');
+            $queryEstado->bindParam(':f', $f, PDO::PARAM_STR);
+            if ($queryEstado->execute()) {
+                if ($queryEstado->rowCount()>0) {
+                    $strTabla = $strTabla.'<tr>
                             <td>10:00 - 11:00</td>
+                            <td class="ocupado">OCUPADO</td>
+                            <td></td>
+                        </tr>';
+                }else{
+                    $strTabla = $strTabla.'<tr>
+                            <td>10:00 - 11:00</td>
+                            <td class="libre">LIBRE</td>
                             <td><a href="./agendarAsesoria.php?profe='.urlencode($idP).'&fecha='.urlencode($f).'&hora=10">Agendar a esta hora</a></td>
                         </tr>';
+                }
+            }
             break;
         case 11:
-            $strTabla = $strTabla.'<tr>
+            $queryEstado = $db->prepare('SELECT * from cita where fecha=:f AND hora = "11:00:00"');
+            $queryEstado->bindParam(':f', $f, PDO::PARAM_STR);
+            if ($queryEstado->execute()) {
+                if ($queryEstado->rowCount()>0) {
+                    $strTabla = $strTabla.'<tr>
                             <td>11:00 - 12:00</td>
+                            <td class="ocupado">OCUPADO</td>
+                            <td></td>
+                        </tr>';
+                }else{
+                    $strTabla = $strTabla.'<tr>
+                            <td>11:00 - 12:00</td>
+                            <td class="libre">LIBRE</td>
                             <td><a href="./agendarAsesoria.php?profe='.urlencode($idP).'&fecha='.urlencode($f).'&hora=11">Agendar a esta hora</a></td>
                         </tr>';
+                }
+            }
             break;
         case 12:
-            $strTabla = $strTabla.'<tr>
+            $queryEstado = $db->prepare('SELECT * from cita where fecha=:f AND hora = "12:00:00"');
+            $queryEstado->bindParam(':f', $f, PDO::PARAM_STR);
+            if ($queryEstado->execute()) {
+                if ($queryEstado->rowCount()>0) {
+                     $strTabla = $strTabla.'<tr>
                             <td>12:00 - 13:00</td>
+                            <td class="ocupado">OCUPADO</td>
+                            <td></td>
+                        </tr>';
+                }else{
+                     $strTabla = $strTabla.'<tr>
+                            <td>12:00 - 13:00</td>
+                            <td class="libre">LIBRE</td>
                             <td><a href="./agendarAsesoria.php?profe='.urlencode($idP).'&fecha='.urlencode($f).'&hora=12">Agendar a esta hora</a></td>
                         </tr>';
+                }
+            }
             break;
         case 13:
-            $strTabla = $strTabla.'<tr>
+            $queryEstado = $db->prepare('SELECT * from cita where fecha=:f AND hora = "13:00:00"');
+            $queryEstado->bindParam(':f', $f, PDO::PARAM_STR);
+            if ($queryEstado->execute()) {
+                if ($queryEstado->rowCount()>0) {
+                    $strTabla = $strTabla.'<tr>
                             <td>13:00 - 14:00</td>
+                            <td class="ocupado">OCUPADO</td>
+                            <td></td>
+                        </tr>';
+                }else{
+                    $strTabla = $strTabla.'<tr>
+                            <td>13:00 - 14:00</td>
+                            <td class="libre">LIBRE</td>
                             <td><a href="./agendarAsesoria.php?profe='.urlencode($idP).'&fecha='.urlencode($f).'&hora=13">Agendar a esta hora</a></td>
                         </tr>';
+                }
+            }
             break;
         case 14:
-            $strTabla = $strTabla.'<tr>
+            $queryEstado = $db->prepare('SELECT * from cita where fecha=:f AND hora = "14:00:00"');
+            $queryEstado->bindParam(':f', $f, PDO::PARAM_STR);
+            if ($queryEstado->execute()) {
+                if ($queryEstado->rowCount()>0) {
+                    $strTabla = $strTabla.'<tr>
                             <td>14:00 - 15:00</td>
+                            <td class="ocupado">OCUPADO</td>
+                            <td></td>
+                        </tr>';
+                }else{
+                    $strTabla = $strTabla.'<tr>
+                            <td>14:00 - 15:00</td>
+                            <td class="libre">LIBRE</td>
                             <td><a href="./agendarAsesoria.php?profe='.urlencode($idP).'&fecha='.urlencode($f).'&hora=14">Agendar a esta hora</a></td>
                         </tr>';
+                }
+            }
             break;
         case 15:
-            $strTabla = $strTabla.'<tr>
+            $queryEstado = $db->prepare('SELECT * from cita where fecha=:f AND hora = "15:00:00"');
+            $queryEstado->bindParam(':f', $f, PDO::PARAM_STR);
+            if ($queryEstado->execute()) {
+                if ($queryEstado->rowCount()>0) {
+                    $strTabla = $strTabla.'<tr>
                             <td>15:00 - 16:00</td>
+                            <td class="ocupado">OCUPADO</td>
+                            <td></td>
+                        </tr>';
+                }else{
+                    $strTabla = $strTabla.'<tr>
+                            <td>15:00 - 16:00</td>
+                            <td class="libre">LIBRE</td>
                             <td><a href="./agendarAsesoria.php?profe='.urlencode($idP).'&fecha='.urlencode($f).'&hora=15">Agendar a esta hora</a></td>
                         </tr>';
+                }
+            }
             break;
         case 16:
-            $strTabla = $strTabla.'<tr>
+            $queryEstado = $db->prepare('SELECT * from cita where fecha=:f AND hora = "16:00:00"');
+            $queryEstado->bindParam(':f', $f, PDO::PARAM_STR);
+            if ($queryEstado->execute()) {
+                if ($queryEstado->rowCount()>0) {
+                    $strTabla = $strTabla.'<tr>
                             <td>16:00 - 17:00</td>
+                            <td class="ocupado">OCUPADO</td>
+                            <td></td>
+                        </tr>';
+                }else{
+                    $strTabla = $strTabla.'<tr>
+                            <td>16:00 - 17:00</td>
+                            <td class="libre">LIBRE</td>
                             <td><a href="./agendarAsesoria.php?profe='.urlencode($idP).'&fecha='.urlencode($f).'&hora=16">Agendar a esta hora</a></td>
                         </tr>';
+                }
+            }
             break;
         case 17:
-            $strTabla = $strTabla.'<tr>
+            $queryEstado = $db->prepare('SELECT * from cita where fecha=:f AND hora = "17:00:00"');
+            $queryEstado->bindParam(':f', $f, PDO::PARAM_STR);
+            if ($queryEstado->execute()) {
+                if ($queryEstado->rowCount()>0) {
+                    $strTabla = $strTabla.'<tr>
                             <td>17:00 - 18:00</td>
+                            <td class="ocupado">OCUPADO</td>
+                            <td></td>
+                        </tr>';
+                }else{
+                    $strTabla = $strTabla.'<tr>
+                            <td>17:00 - 18:00</td>
+                            <td class="libre">LIBRE</td>
                             <td><a href="./agendarAsesoria.php?profe='.urlencode($idP).'&fecha='.urlencode($f).'&hora=17">Agendar a esta hora</a></td>
                         </tr>';
+                }
+            }
             break;
         case 18:
-            $strTabla = $strTabla.'<tr>
+            $queryEstado = $db->prepare('SELECT * from cita where fecha=:f AND hora = "18:00:00"');
+            $queryEstado->bindParam(':f', $f, PDO::PARAM_STR);
+            if ($queryEstado->execute()) {
+                if ($queryEstado->rowCount()>0) {
+                    $strTabla = $strTabla.'<tr>
                             <td>18:00 - 19:00</td>
+                            <td class="ocupado">OCUPADO</td>
                             <td><a href="./agendarAsesoria.php?profe='.urlencode($idP).'&fecha='.urlencode($f).'&hora=18">Agendar a esta hora</a></td>
                         </tr>';
+                }else{
+                    $strTabla = $strTabla.'<tr>
+                            <td>18:00 - 19:00</td>
+                            <td class="libre">LIBRE</td>
+                            <td><a href="./agendarAsesoria.php?profe='.urlencode($idP).'&fecha='.urlencode($f).'&hora=18">Agendar a esta hora</a></td>
+                        </tr>';
+                }
+            }
             break;
         default:
             echo "Error al crear las horas";
@@ -92,6 +248,7 @@ $ase = "Asesoría";
 $dia = date("N", strtotime($fecha));
 $tablaHtml = '<table class="table"><thead class="thead"><tr>
                 <th>Hora</th>
+                <th>Estado</th>
                 <th></th>
               </tr></thead>
               <tbody>';
@@ -105,13 +262,14 @@ switch ($dia) {
             if (in_array('Asesoría', $horas)) {
                 foreach ($horas as $h) {
                     if ($h == 'Asesoría') {
-                        $tablaHtml = $tablaHtml.imprimirHoras($i, $idProfe, $fecha);
+                        $tablaHtml = $tablaHtml.imprimirHoras($i, $idProfe, $fecha, $conn);
                     }
                     $i += 1;
                 }
                 unset($h);
                 $tablaHtml = $tablaHtml.'</tbody></table>';
                 echo $tablaHtml;
+                //echo $fecha;
             }else {
                 echo "El docente no da Asesorías el día Lunes";
             }
@@ -126,7 +284,7 @@ switch ($dia) {
             if (in_array('Asesoría', $horas)) {
                 foreach ($horas as $h) {
                     if ($h == 'Asesoría') {
-                        $tablaHtml = $tablaHtml.imprimirHoras($i, $idProfe, $fecha);
+                        $tablaHtml = $tablaHtml.imprimirHoras($i, $idProfe, $fecha, $conn);
                     }
                     $i += 1;
                 }
@@ -147,7 +305,7 @@ switch ($dia) {
             if (in_array('Asesoría', $horas)) {
                 foreach ($horas as $h) {
                     if ($h == 'Asesoría') {
-                        $tablaHtml = $tablaHtml.imprimirHoras($i, $idProfe, $fecha);
+                        $tablaHtml = $tablaHtml.imprimirHoras($i, $idProfe, $fecha, $conn);
                     }
                     $i += 1;
                 }
@@ -168,7 +326,7 @@ switch ($dia) {
             if (in_array('Asesoría', $horas)) {
                 foreach ($horas as $h) {
                     if ($h == 'Asesoría') {
-                        $tablaHtml = $tablaHtml.imprimirHoras($i, $idProfe, $fecha);
+                        $tablaHtml = $tablaHtml.imprimirHoras($i, $idProfe, $fecha, $conn);
                     }
                     $i += 1;
                 }
@@ -189,7 +347,7 @@ switch ($dia) {
             if (in_array('Asesoría', $horas)) {
                 foreach ($horas as $h) {
                     if ($h == 'Asesoría') {
-                        $tablaHtml = $tablaHtml.imprimirHoras($i, $idProfe, $fecha);
+                        $tablaHtml = $tablaHtml.imprimirHoras($i, $idProfe, $fecha, $conn);
                     }
                     $i += 1;
                 }
