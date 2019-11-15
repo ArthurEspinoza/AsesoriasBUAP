@@ -55,13 +55,13 @@ if ($datosProfe->rowCount() > 0) {
                 <div class="form-group row">
                     <label for="contra" class="col-sm-2 col-form-label">Contraseña*</label>
                     <div class="col-sm-10">
-                        <input type="password" onfocus='cambiarColor("contra")' class="form-control" name="contra" id="contra" placeholder="Ingrese una contraseña">
+                        <input type="password" onfocus='cambiarColor("contra")' class="form-control" name="contra" id="contra" value="<?php echo $dP['contra'] ?>" placeholder="Ingrese una contraseña">
                     </div>
                 </div>
                 <div class="form-group row">
                     <label for="ccontrasena" class="col-sm-2 col-form-label">Confirmar Contraseña*</label>
                     <div class="col-sm-10">
-                        <input type="password" onfocus='cambiarColor("ccontra")' class="form-control" name="ccontra" id="ccontra" placeholder="Vuelva a ingresar la contraseña" >
+                        <input type="password" onfocus='cambiarColor("ccontra")' class="form-control" name="ccontra" id="ccontra" value="<?php echo $dP['contra'] ?>" placeholder="Vuelva a ingresar la contraseña" >
                     </div>
                 </div>
                 <div class="form-group row">
@@ -76,7 +76,7 @@ if ($datosProfe->rowCount() > 0) {
                         <input type="text" class="form-control" name="edificio" id="edificio" value="<?php echo $dP['edificio']?>">
                     </div>
                 </div>
-                <input type="submit" value="Crear Cuenta" id="regbtn" class="btn btn-outline-primary">
+                <input type="submit" value="Actualizar tus datos" id="regbtn" class="btn btn-outline-primary">
             </form>
         </div>
     </div>
