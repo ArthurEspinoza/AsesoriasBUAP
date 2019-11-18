@@ -38,6 +38,7 @@
     <div class="banner">
         <img src="img/escudo_negativo.png" alt="LogoBuap">
         <h1>Acceso a docentes</h1>
+        <button id="backBtn" onclick="location.href='busqueda.php'">Volver al buscador</button>
     </div>
     <div id="container" class="container">
         <div id="contenedorImg">
