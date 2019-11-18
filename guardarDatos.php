@@ -4,7 +4,7 @@
     include('php/config.php');
     $conn = getDB();
     $idProfe = $_SESSION['noTrabajador'];
-    echo $idProfe;
+    //echo $idProfe;
     for ($i=1; $i<=12; $i++) { 
         for ($j=1; $j<=5; $j++) {
             //echo $_POST[$i.$j];
@@ -83,31 +83,172 @@
         'diezsiete' => $GLOBALS[115],
         'diezocho' => $GLOBALS[125],
     ];
+    //echo $datosLunes['siete'];
     $profe = $conn->prepare('SELECT * FROM lunes WHERE noTrabajador=:prof');
     $profe->bindParam(':prof', $idProfe, PDO::PARAM_INT);
     $profe->execute();
     if ($profe->rowCount()>0) {
-        $sql1 = $conn->prepare('UPDATE lunes SET siete=:siete, ocho=:ocho, nueve=:nueve, diez=:diez, once=:once, doce=:doce, trece=:trece, catorce=:catorce, quince=:quince, diezseis=:diezseis, diezsiete=:diezsiete, diezocho=:diezocho');
-        $sql2 = $conn->prepare('UPDATE martes SET siete=:siete, ocho=:ocho, nueve=:nueve, diez=:diez, once=:once, doce=:doce, trece=:trece, catorce=:catorce, quince=:quince, diezseis=:diezseis, diezsiete=:diezsiete, diezocho=:diezocho');
-        $sql3 = $conn->prepare('UPDATE miercoles SET siete=:siete, ocho=:ocho, nueve=:nueve, diez=:diez, once=:once, doce=:doce, trece=:trece, catorce=:catorce, quince=:quince, diezseis=:diezseis, diezsiete=:diezsiete, diezocho=:diezocho');
-        $sql4 = $conn->prepare('UPDATE jueves SET siete=:siete, ocho=:ocho, nueve=:nueve, diez=:diez, once=:once, doce=:doce, trece=:trece, catorce=:catorce, quince=:quince, diezseis=:diezseis, diezsiete=:diezsiete, diezocho=:diezocho');
-        $sql5 = $conn->prepare('UPDATE viernes SET siete=:siete, ocho=:ocho, nueve=:nueve, diez=:diez, once=:once, doce=:doce, trece=:trece, catorce=:catorce, quince=:quince, diezseis=:diezseis, diezsiete=:diezsiete, diezocho=:diezocho');
-        $sql1->execute($datosLunes);
-        $sql2->execute($datosMartes);
-        $sql3->execute($datosMiercoles);
-        $sql4->execute($datosJueves);
-        $sql5->execute($datosViernes);
+        $sql1 = $conn->prepare('UPDATE lunes SET siete=:siete, ocho=:ocho, nueve=:nueve, diez=:diez, once=:once, doce=:doce, trece=:trece, catorce=:catorce, quince=:quince, diezseis=:diezseis, diezsiete=:diezsiete, diezocho=:diezocho WHERE noTrabajador=:nt');
+        $sql2 = $conn->prepare('UPDATE martes SET siete=:siete, ocho=:ocho, nueve=:nueve, diez=:diez, once=:once, doce=:doce, trece=:trece, catorce=:catorce, quince=:quince, diezseis=:diezseis, diezsiete=:diezsiete, diezocho=:diezocho WHERE noTrabajador=:nt');
+        $sql3 = $conn->prepare('UPDATE miercoles SET siete=:siete, ocho=:ocho, nueve=:nueve, diez=:diez, once=:once, doce=:doce, trece=:trece, catorce=:catorce, quince=:quince, diezseis=:diezseis, diezsiete=:diezsiete, diezocho=:diezocho WHERE noTrabajador=:nt');
+        $sql4 = $conn->prepare('UPDATE jueves SET siete=:siete, ocho=:ocho, nueve=:nueve, diez=:diez, once=:once, doce=:doce, trece=:trece, catorce=:catorce, quince=:quince, diezseis=:diezseis, diezsiete=:diezsiete, diezocho=:diezocho WHERE noTrabajador=:nt');
+        $sql5 = $conn->prepare('UPDATE viernes SET siete=:siete, ocho=:ocho, nueve=:nueve, diez=:diez, once=:once, doce=:doce, trece=:trece, catorce=:catorce, quince=:quince, diezseis=:diezseis, diezsiete=:diezsiete, diezocho=:diezocho WHERE noTrabajador=:nt');
+        //LUNES
+        $sql1->bindParam(':siete', $datosLunes['siete'], PDO::PARAM_STR);
+        $sql1->bindParam(':ocho', $datosLunes['ocho'], PDO::PARAM_STR);
+        $sql1->bindParam(':nueve', $datosLunes['nueve'], PDO::PARAM_STR);
+        $sql1->bindParam(':diez', $datosLunes['diez'], PDO::PARAM_STR);
+        $sql1->bindParam(':once', $datosLunes['once'], PDO::PARAM_STR);
+        $sql1->bindParam(':doce', $datosLunes['doce'], PDO::PARAM_STR);
+        $sql1->bindParam(':trece', $datosLunes['trece'], PDO::PARAM_STR);
+        $sql1->bindParam(':catorce', $datosLunes['catorce'], PDO::PARAM_STR);
+        $sql1->bindParam(':quince', $datosLunes['quince'], PDO::PARAM_STR);
+        $sql1->bindParam(':diezseis', $datosLunes['diezseis'], PDO::PARAM_STR);
+        $sql1->bindParam(':diezsiete', $datosLunes['diezsiete'], PDO::PARAM_STR);
+        $sql1->bindParam(':diezocho', $datosLunes['diezocho'], PDO::PARAM_STR);
+        $sql1->bindParam(':nt', $idProfe, PDO::PARAM_INT);
+        //Martes
+        $sql2->bindParam(':siete', $datosMartes['siete'], PDO::PARAM_STR);
+        $sql2->bindParam(':ocho', $datosMartes['ocho'], PDO::PARAM_STR);
+        $sql2->bindParam(':nueve', $datosMartes['nueve'], PDO::PARAM_STR);
+        $sql2->bindParam(':diez', $datosMartes['diez'], PDO::PARAM_STR);
+        $sql2->bindParam(':once', $datosMartes['once'], PDO::PARAM_STR);
+        $sql2->bindParam(':doce', $datosMartes['doce'], PDO::PARAM_STR);
+        $sql2->bindParam(':trece', $datosMartes['trece'], PDO::PARAM_STR);
+        $sql2->bindParam(':catorce', $datosMartes['catorce'], PDO::PARAM_STR);
+        $sql2->bindParam(':quince', $datosMartes['quince'], PDO::PARAM_STR);
+        $sql2->bindParam(':diezseis', $datosMartes['diezseis'], PDO::PARAM_STR);
+        $sql2->bindParam(':diezsiete', $datosMartes['diezsiete'], PDO::PARAM_STR);
+        $sql2->bindParam(':diezocho', $datosMartes['diezocho'], PDO::PARAM_STR);
+        $sql2->bindParam(':nt', $idProfe, PDO::PARAM_INT);
+        //Miercoles
+        $sql3->bindParam(':siete', $datosMiercoles['siete'], PDO::PARAM_STR);
+        $sql3->bindParam(':ocho', $datosMiercoles['ocho'], PDO::PARAM_STR);
+        $sql3->bindParam(':nueve', $datosMiercoles['nueve'], PDO::PARAM_STR);
+        $sql3->bindParam(':diez', $datosMiercoles['diez'], PDO::PARAM_STR);
+        $sql3->bindParam(':once', $datosMiercoles['once'], PDO::PARAM_STR);
+        $sql3->bindParam(':doce', $datosMiercoles['doce'], PDO::PARAM_STR);
+        $sql3->bindParam(':trece', $datosMiercoles['trece'], PDO::PARAM_STR);
+        $sql3->bindParam(':catorce', $datosMiercoles['catorce'], PDO::PARAM_STR);
+        $sql3->bindParam(':quince', $datosMiercoles['quince'], PDO::PARAM_STR);
+        $sql3->bindParam(':diezseis', $datosMiercoles['diezseis'], PDO::PARAM_STR);
+        $sql3->bindParam(':diezsiete', $datosMiercoles['diezsiete'], PDO::PARAM_STR);
+        $sql3->bindParam(':diezocho', $datosMiercoles['diezocho'], PDO::PARAM_STR);
+        $sql3->bindParam(':nt', $idProfe, PDO::PARAM_INT);
+        //JUEVES
+        $sql4->bindParam(':siete', $datosJueves['siete'], PDO::PARAM_STR);
+        $sql4->bindParam(':ocho', $datosJueves['ocho'], PDO::PARAM_STR);
+        $sql4->bindParam(':nueve', $datosJueves['nueve'], PDO::PARAM_STR);
+        $sql4->bindParam(':diez', $datosJueves['diez'], PDO::PARAM_STR);
+        $sql4->bindParam(':once', $datosJueves['once'], PDO::PARAM_STR);
+        $sql4->bindParam(':doce', $datosJueves['doce'], PDO::PARAM_STR);
+        $sql4->bindParam(':trece', $datosJueves['trece'], PDO::PARAM_STR);
+        $sql4->bindParam(':catorce', $datosJueves['catorce'], PDO::PARAM_STR);
+        $sql4->bindParam(':quince', $datosJueves['quince'], PDO::PARAM_STR);
+        $sql4->bindParam(':diezseis', $datosJueves['diezseis'], PDO::PARAM_STR);
+        $sql4->bindParam(':diezsiete', $datosJueves['diezsiete'], PDO::PARAM_STR);
+        $sql4->bindParam(':diezocho', $datosJueves['diezocho'], PDO::PARAM_STR);
+        $sql4->bindParam(':nt', $idProfe, PDO::PARAM_INT);
+        //VIERNES
+        $sql5->bindParam(':siete', $datosViernes['siete'], PDO::PARAM_STR);
+        $sql5->bindParam(':ocho', $datosViernes['ocho'], PDO::PARAM_STR);
+        $sql5->bindParam(':nueve', $datosViernes['nueve'], PDO::PARAM_STR);
+        $sql5->bindParam(':diez', $datosViernes['diez'], PDO::PARAM_STR);
+        $sql5->bindParam(':once', $datosViernes['once'], PDO::PARAM_STR);
+        $sql5->bindParam(':doce', $datosViernes['doce'], PDO::PARAM_STR);
+        $sql5->bindParam(':trece', $datosViernes['trece'], PDO::PARAM_STR);
+        $sql5->bindParam(':catorce', $datosViernes['catorce'], PDO::PARAM_STR);
+        $sql5->bindParam(':quince', $datosViernes['quince'], PDO::PARAM_STR);
+        $sql5->bindParam(':diezseis', $datosViernes['diezseis'], PDO::PARAM_STR);
+        $sql5->bindParam(':diezsiete', $datosViernes['diezsiete'], PDO::PARAM_STR);
+        $sql5->bindParam(':diezocho', $datosViernes['diezocho'], PDO::PARAM_STR);
+        $sql5->bindParam(':nt', $idProfe, PDO::PARAM_INT);
+        $sql1->execute();
+        $sql2->execute();
+        $sql3->execute();
+        $sql4->execute();
+        $sql5->execute();
     }else{
-        $sql1 = $conn->prepare('INSERT INTO lunes(siete, ocho, nueve, diez, once, doce, trece, catorce, quince, diezseis, diezsiete, diezocho) VALUES(:siete, :ocho, :nueve, :diez, :once, :doce, :trece, :catorce, :quince, :diezseis, :diezsiete, :diezocho)');
-        $sql2 = $conn->prepare('INSERT INTO martes(siete, ocho, nueve, diez, once, doce, trece, catorce, quince, diezseis, diezsiete, diezocho) VALUES(:siete, :ocho, :nueve, :diez, :once, :doce, :trece, :catorce, :quince, :diezseis, :diezsiete, :diezocho)');
-        $sql3 = $conn->prepare('INSERT INTO miercoles(siete, ocho, nueve, diez, once, doce, trece, catorce, quince, diezseis, diezsiete, diezocho) VALUES(:siete, :ocho, :nueve, :diez, :once, :doce, :trece, :catorce, :quince, :diezseis, :diezsiete, :diezocho)');
-        $sql4 = $conn->prepare('INSERT INTO jueves(siete, ocho, nueve, diez, once, doce, trece, catorce, quince, diezseis, diezsiete, diezocho) VALUES(:siete, :ocho, :nueve, :diez, :once, :doce, :trece, :catorce, :quince, :diezseis, :diezsiete, :diezocho)');
-        $sql5 = $conn->prepare('INSERT INTO viernes(siete, ocho, nueve, diez, once, doce, trece, catorce, quince, diezseis, diezsiete, diezocho) VALUES(:siete, :ocho, :nueve, :diez, :once, :doce, :trece, :catorce, :quince, :diezseis, :diezsiete, :diezocho)');
-        $sql1->execute($datosLunes);
-        $sql2->execute($datosMartes);
-        $sql3->execute($datosMiercoles);
-        $sql4->execute($datosJueves);
-        $sql5->execute($datosViernes);
+        $sql1 = $conn->prepare('INSERT INTO lunes(noTrabajador,siete, ocho, nueve, diez, once, doce, trece, catorce, quince, diezseis, diezsiete, diezocho) VALUES(:nT,:siete, :ocho, :nueve, :diez, :once, :doce, :trece, :catorce, :quince, :diezseis, :diezsiete, :diezocho)');
+        $sql2 = $conn->prepare('INSERT INTO martes(noTrabajador,siete, ocho, nueve, diez, once, doce, trece, catorce, quince, diezseis, diezsiete, diezocho) VALUES(:nT,:siete, :ocho, :nueve, :diez, :once, :doce, :trece, :catorce, :quince, :diezseis, :diezsiete, :diezocho)');
+        $sql3 = $conn->prepare('INSERT INTO miercoles(noTrabajador,siete, ocho, nueve, diez, once, doce, trece, catorce, quince, diezseis, diezsiete, diezocho) VALUES(:nT,:siete, :ocho, :nueve, :diez, :once, :doce, :trece, :catorce, :quince, :diezseis, :diezsiete, :diezocho)');
+        $sql4 = $conn->prepare('INSERT INTO jueves(noTrabajador,siete, ocho, nueve, diez, once, doce, trece, catorce, quince, diezseis, diezsiete, diezocho) VALUES(:nT,:siete, :ocho, :nueve, :diez, :once, :doce, :trece, :catorce, :quince, :diezseis, :diezsiete, :diezocho)');
+        $sql5 = $conn->prepare('INSERT INTO viernes(noTrabajador,siete, ocho, nueve, diez, once, doce, trece, catorce, quince, diezseis, diezsiete, diezocho) VALUES(:nT,:siete, :ocho, :nueve, :diez, :once, :doce, :trece, :catorce, :quince, :diezseis, :diezsiete, :diezocho)');
+        //LUNES
+        $sql1->bindParam(':nT', $idProfe, PDO::PARAM_INT);
+        $sql1->bindParam(':siete', $datosLunes['siete'], PDO::PARAM_STR);
+        $sql1->bindParam(':ocho', $datosLunes['ocho'], PDO::PARAM_STR);
+        $sql1->bindParam(':nueve', $datosLunes['nueve'], PDO::PARAM_STR);
+        $sql1->bindParam(':diez', $datosLunes['diez'], PDO::PARAM_STR);
+        $sql1->bindParam(':once', $datosLunes['once'], PDO::PARAM_STR);
+        $sql1->bindParam(':doce', $datosLunes['doce'], PDO::PARAM_STR);
+        $sql1->bindParam(':trece', $datosLunes['trece'], PDO::PARAM_STR);
+        $sql1->bindParam(':catorce', $datosLunes['catorce'], PDO::PARAM_STR);
+        $sql1->bindParam(':quince', $datosLunes['quince'], PDO::PARAM_STR);
+        $sql1->bindParam(':diezseis', $datosLunes['diezseis'], PDO::PARAM_STR);
+        $sql1->bindParam(':diezsiete', $datosLunes['diezsiete'], PDO::PARAM_STR);
+        $sql1->bindParam(':diezocho', $datosLunes['diezocho'], PDO::PARAM_STR);
+        //Martes
+        $sql2->bindParam(':nT', $idProfe, PDO::PARAM_INT);
+        $sql2->bindParam(':siete', $datosMartes['siete'], PDO::PARAM_STR);
+        $sql2->bindParam(':ocho', $datosMartes['ocho'], PDO::PARAM_STR);
+        $sql2->bindParam(':nueve', $datosMartes['nueve'], PDO::PARAM_STR);
+        $sql2->bindParam(':diez', $datosMartes['diez'], PDO::PARAM_STR);
+        $sql2->bindParam(':once', $datosMartes['once'], PDO::PARAM_STR);
+        $sql2->bindParam(':doce', $datosMartes['doce'], PDO::PARAM_STR);
+        $sql2->bindParam(':trece', $datosMartes['trece'], PDO::PARAM_STR);
+        $sql2->bindParam(':catorce', $datosMartes['catorce'], PDO::PARAM_STR);
+        $sql2->bindParam(':quince', $datosMartes['quince'], PDO::PARAM_STR);
+        $sql2->bindParam(':diezseis', $datosMartes['diezseis'], PDO::PARAM_STR);
+        $sql2->bindParam(':diezsiete', $datosMartes['diezsiete'], PDO::PARAM_STR);
+        $sql2->bindParam(':diezocho', $datosMartes['diezocho'], PDO::PARAM_STR);
+        //Miercoles
+        $sql3->bindParam(':nT', $idProfe, PDO::PARAM_INT);
+        $sql3->bindParam(':siete', $datosMiercoles['siete'], PDO::PARAM_STR);
+        $sql3->bindParam(':ocho', $datosMiercoles['ocho'], PDO::PARAM_STR);
+        $sql3->bindParam(':nueve', $datosMiercoles['nueve'], PDO::PARAM_STR);
+        $sql3->bindParam(':diez', $datosMiercoles['diez'], PDO::PARAM_STR);
+        $sql3->bindParam(':once', $datosMiercoles['once'], PDO::PARAM_STR);
+        $sql3->bindParam(':doce', $datosMiercoles['doce'], PDO::PARAM_STR);
+        $sql3->bindParam(':trece', $datosMiercoles['trece'], PDO::PARAM_STR);
+        $sql3->bindParam(':catorce', $datosMiercoles['catorce'], PDO::PARAM_STR);
+        $sql3->bindParam(':quince', $datosMiercoles['quince'], PDO::PARAM_STR);
+        $sql3->bindParam(':diezseis', $datosMiercoles['diezseis'], PDO::PARAM_STR);
+        $sql3->bindParam(':diezsiete', $datosMiercoles['diezsiete'], PDO::PARAM_STR);
+        $sql3->bindParam(':diezocho', $datosMiercoles['diezocho'], PDO::PARAM_STR);
+        //JUEVES
+        $sql4->bindParam(':nT', $idProfe, PDO::PARAM_INT);
+        $sql4->bindParam(':siete', $datosJueves['siete'], PDO::PARAM_STR);
+        $sql4->bindParam(':ocho', $datosJueves['ocho'], PDO::PARAM_STR);
+        $sql4->bindParam(':nueve', $datosJueves['nueve'], PDO::PARAM_STR);
+        $sql4->bindParam(':diez', $datosJueves['diez'], PDO::PARAM_STR);
+        $sql4->bindParam(':once', $datosJueves['once'], PDO::PARAM_STR);
+        $sql4->bindParam(':doce', $datosJueves['doce'], PDO::PARAM_STR);
+        $sql4->bindParam(':trece', $datosJueves['trece'], PDO::PARAM_STR);
+        $sql4->bindParam(':catorce', $datosJueves['catorce'], PDO::PARAM_STR);
+        $sql4->bindParam(':quince', $datosJueves['quince'], PDO::PARAM_STR);
+        $sql4->bindParam(':diezseis', $datosJueves['diezseis'], PDO::PARAM_STR);
+        $sql4->bindParam(':diezsiete', $datosJueves['diezsiete'], PDO::PARAM_STR);
+        $sql4->bindParam(':diezocho', $datosJueves['diezocho'], PDO::PARAM_STR);
+        //VIERNES
+        $sql5->bindParam(':nT', $idProfe, PDO::PARAM_INT);
+        $sql5->bindParam(':siete', $datosViernes['siete'], PDO::PARAM_STR);
+        $sql5->bindParam(':ocho', $datosViernes['ocho'], PDO::PARAM_STR);
+        $sql5->bindParam(':nueve', $datosViernes['nueve'], PDO::PARAM_STR);
+        $sql5->bindParam(':diez', $datosViernes['diez'], PDO::PARAM_STR);
+        $sql5->bindParam(':once', $datosViernes['once'], PDO::PARAM_STR);
+        $sql5->bindParam(':doce', $datosViernes['doce'], PDO::PARAM_STR);
+        $sql5->bindParam(':trece', $datosViernes['trece'], PDO::PARAM_STR);
+        $sql5->bindParam(':catorce', $datosViernes['catorce'], PDO::PARAM_STR);
+        $sql5->bindParam(':quince', $datosViernes['quince'], PDO::PARAM_STR);
+        $sql5->bindParam(':diezseis', $datosViernes['diezseis'], PDO::PARAM_STR);
+        $sql5->bindParam(':diezsiete', $datosViernes['diezsiete'], PDO::PARAM_STR);
+        $sql5->bindParam(':diezocho', $datosViernes['diezocho'], PDO::PARAM_STR);
+        $sql1->execute();
+        $sql2->execute();
+        $sql3->execute();
+        $sql4->execute();
+        $sql5->execute();
     }
     echo '<script>
         window.location.href="horario.php";
