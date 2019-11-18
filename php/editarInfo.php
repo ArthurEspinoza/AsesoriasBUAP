@@ -16,7 +16,7 @@ $update->bindParam(':nombre',$nombre,PDO::PARAM_STR);
 $update->bindParam(':nT',$noTrabajador,PDO::PARAM_INT);
 $update->bindParam(':correo',$correo,PDO::PARAM_STR);
 $update->bindParam(':contra',$contra,PDO::PARAM_STR);
-$update->bindParam(':cubo',$cubo,PDO::PARAM_INT);
+$update->bindParam(':cubo',$cubo,PDO::PARAM_STR);
 $update->bindParam(':edificio',$edificio,PDO::PARAM_STR);
 $update->bindParam(':Nt',$id,PDO::PARAM_INT);
 

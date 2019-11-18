@@ -34,6 +34,7 @@
          <th>Nombre</th>
          <th>Email</th>
          <th>Cubículo</th>
+         <th>Edificio</th>
          <th></th>
          </tr>
          </thead>
@@ -46,6 +47,7 @@
              <td>'.$datos['nombre'].'</td>
              <td>'.$datos['email'].'</td>
              <td>'.$datos['cubiculo'].'</td>
+             <td>'.$datos['edificio'].'</td>
              <td><a href="php/verHorario.php?profe='.urlencode($datos['noTrabajador']).'">Ver horario</a></td>
          </tr>
          ';
