@@ -1,3 +1,24 @@
+.banner {
+    background-color: #003b5c;
+    width: 100%;
+    padding: 1%;
+}
+
+.banner>* {
+    display: inline;
+}
+
+.banner img {
+    width: 75px;
+    height: auto;
+    margin: 5px 0 5px 0;
+}
+
+.banner h1 {
+    color: #ffffff;
+    margin-left: 37%;
+}
+
 h1 {
     text-align: center;
 }
@@ -16,9 +37,11 @@ th {
 
 #btnG {
     margin: 10px 45% 10px 45%;
+    background-color: #003b5c;
+    color: #ffffff;
 }
 
 #btnG:hover {
-    background-color: #283655;
-    color: whitesmoke;
+    background-color: #00b5e2;
+    color: #003b5c;
 }

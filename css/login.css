@@ -122,7 +122,8 @@ h1 {
 }
 
 .banner #backBtn:hover {
-    background-color: #ed7102;
+    background-color: #00b5e2;
+    color: #003b5c;
 }
 
 #contenedorImg {

@@ -192,7 +192,7 @@ if ($horarioViernes->execute()) {
      ?>
     </table> 
     </div>
-    <button id="btnH" type="button" class="btn btn-outline-primary"><a href="guardarHorario.php">Editar Horario</a></button>
+    <button id="btnH" type="button" onclick="location.href='guardarHorario.php'" class="btn btn-outline-primary">Editar Horario</button>
     
 </body>
 

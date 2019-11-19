@@ -9,7 +9,10 @@
     <link rel="stylesheet" href="css/mostrarHorario.css">
 </head>
 <body>
-    <h1>Horario del Profesor</h1>
+    <div class="banner">
+        <!-- <img src="img/escudo_negativo.png" alt="LogoBuap"> -->
+        <h1>Horario del docente</h1>
+    </div>
         <table border="1px" align="center">
         <tr>
             <th>Hora</th>

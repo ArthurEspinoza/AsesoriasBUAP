@@ -73,11 +73,13 @@ header li a:hover {
 
 #btnH {
     margin: 5px 43% 5px 43%;
+    background-color: #003b5c;
+    color: #ffffff;
 }
 
 #btnH:hover {
-    background-color: #283655;
-    color: whitesmoke;
+    background-color: #00b5e2;
+    color: #003b5c;
 }
 
 #btnH a:hover {
